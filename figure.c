@@ -3,11 +3,11 @@
 
 char arr[] = "ABCDEFGH";
 
+
 int input_soldier_1()
 {
 	int lyubaya = 0;
 here_01:
-	printf("\n¬ведите букву из координаты пешки\n");
 	scanf_s(" %c", &x);
 	for (int i = 0; i < 8; i++)
 	{
@@ -21,18 +21,21 @@ here_01:
 	}
 	if (lyubaya != 1)
 	{
+		printf("ќшибка. ¬ведите значение ещЄ раз :");
 		goto here_01;
 	}
-
 	return (x);
 }
 
 int input_soldier_2()
 {
-here_1: printf("\n¬ведите цифру из координаты пешки\n");
+here_1:
 	scanf_s("%d", &y);
-	if (y > 8 && y < 1)
+	if (y > 8 || y < 1)
+	{
+		printf("ќшибка. ¬ведите значение ещЄ раз :");
 		goto here_1;
+	}
 	return (y);
 }
 
@@ -64,7 +67,9 @@ int input_tower_2()
 here_2:
 	printf("\n¬ведите цифру из координаты слона\n");
 	scanf_s("%d", &Y);
-	if (Y > 8 && Y < 1)
+
+	if (Y > 8 || Y < 1)
 		goto here_2;
+
 	return (Y);
 }
